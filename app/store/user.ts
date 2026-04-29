@@ -1,12 +1,9 @@
 import { create } from 'zustand';
 import cookie from 'js-cookie';
-import { apiClient } from '@/lib/api-client';
-import { SystemSysUser } from '@/generator/sys-api';
-import { findFnFromApiClient } from '@/utils/utils';
 import { tipCatchError } from '@/utils/request';
 
 type State = {
-  userInfo?: SystemSysUser;
+  userInfo?: any;
   token: string;
   initLoading: boolean;
 };
@@ -51,37 +48,36 @@ export const useUserStore = create<State & Action>((set, get) => ({
     cookie.remove('x-token');
   },
   getUserInfo: async () => {
-    (window as any).findFnFromApiClient = findFnFromApiClient;
-    try {
-      const res = await apiClient.defaultModule.userGetUserInfoGet();
-      const data = res.data;
-      if (data.code === 0 && data.data) {
-        set({ userInfo: data.data.userInfo });
-        return true;
-      }
-    } catch {
-      //
-    }
+    // try {
+    //   const res = await apiClient.defaultModule.userGetUserInfoGet();
+    //   const data = res.data;
+    //   if (data.code === 0 && data.data) {
+    //     set({ userInfo: data.data.userInfo });
+    //     return true;
+    //   }
+    // } catch {
+    //   //
+    // }
     return false;
   },
   login: async (loginInfo: any) => {
-    const res = await apiClient.baseModule
-      .baseLoginPost({ data: loginInfo })
-      .catch(tipCatchError as never);
-    const data = res.data;
-    if (data?.code === 0 && data.data && data.data.user && data.data.token) {
-      set({ userInfo: data.data.user, token: data.data.token });
-      localStorage.setItem('token', data.data.token);
-      cookie.set('x-token', data.data.token);
-      return true;
-    }
+    // const res = await apiClient.baseModule
+    //   .baseLoginPost({ data: loginInfo })
+    //   .catch(tipCatchError as never);
+    // const data = res.data;
+    // if (data?.code === 0 && data.data && data.data.user && data.data.token) {
+    //   set({ userInfo: data.data.user, token: data.data.token });
+    //   localStorage.setItem('token', data.data.token);
+    //   cookie.set('x-token', data.data.token);
+    //   return true;
+    // }
     return false;
   },
   logout: async () => {
-    const { clearStorage } = get();
-    const res = await apiClient.jwtModule.jwtJsonInBlacklistPost();
-    if (res.data.code === 0) {
-      clearStorage();
-    }
+    // const { clearStorage } = get();
+    // const res = await apiClient.jwtModule.jwtJsonInBlacklistPost();
+    // if (res.data.code === 0) {
+    //   clearStorage();
+    // }
   },
 }));
