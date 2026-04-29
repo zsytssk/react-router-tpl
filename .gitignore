@@ -1,0 +1,12 @@
+*.local
+
+.DS_Store
+/node_modules/
+
+# React Router
+/.react-router/
+/build/
+
+# lock
+package-lock.json
+yarn.lock
