@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 import cookie from 'js-cookie';
-import { tipCatchError } from '@/utils/request';
 
 type State = {
   userInfo?: any;

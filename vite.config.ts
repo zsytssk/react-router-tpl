@@ -1,7 +1,6 @@
 import { reactRouter } from '@react-router/dev/vite';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig, loadEnv, type PluginOption } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
 import devtoolsJson from 'vite-plugin-devtools-json';
 
 import svgr from 'vite-plugin-svgr';
@@ -22,6 +21,9 @@ if (gitLocalChange) {
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
   return {
+    resolve: {
+      tsconfigPaths: true,
+    },
     define: {
       __APP_BUILD_TIME__: JSON.stringify(gitTime),
       __APP_VERSION__: JSON.stringify(gitVersion),
@@ -38,7 +40,6 @@ export default defineConfig(({ mode }) => {
           icon: true, // 将SVG视为图标（添加默认尺寸）
         },
       }),
-      tsconfigPaths(),
       {
         ...devtoolsJson(),
         apply: 'serve',
