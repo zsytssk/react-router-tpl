@@ -1,6 +1,7 @@
-import { useUserStore } from '@/store/user';
 import { Spin } from 'antd';
 import { Navigate } from 'react-router';
+
+import { useUserStore } from '@/store/user';
 
 export default function Page() {
   const { token, initLoading } = useUserStore();

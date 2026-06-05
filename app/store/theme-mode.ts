@@ -9,7 +9,7 @@ export const useThemeMode = create(
     updateMenuCollapsed: (collapsed: boolean) => void;
   }>(
     (set) => ({
-      isDark: false,
+      isDark: true,
       updateThemeMode: (isDark: boolean) => set({ isDark }),
       menuCollapsed: false,
       updateMenuCollapsed: (collapsed: boolean) =>

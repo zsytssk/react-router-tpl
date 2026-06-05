@@ -1,5 +1,5 @@
-import { create } from 'zustand';
 import cookie from 'js-cookie';
+import { create } from 'zustand';
 
 type State = {
   userInfo?: any;

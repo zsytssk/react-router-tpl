@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+
 import styles from './test.module.scss';
 
 export default function AlarmPage() {

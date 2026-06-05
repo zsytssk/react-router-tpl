@@ -1,20 +1,21 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 import { StyleProvider } from '@ant-design/cssinjs';
-import { ConfigProvider, App as AppAntd } from 'antd';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import type { Route } from './+types/root';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { ConfigProvider, App as AppAntd } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
-import './styles/app.css';
-import React, { useLayoutEffect } from 'react';
-import { useThemeMode } from './store/theme-mode';
-import { cn } from './lib/utils';
-import 'dayjs/locale/zh-cn';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
-import { initDom } from './utils/positionToCode';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { useUserStore } from './store/user';
 import cookie from 'js-cookie';
+import React, { useLayoutEffect } from 'react';
+import 'dayjs/locale/zh-cn';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
+
+import type { Route } from './+types/root';
+import { cn } from './lib/utils';
+import { useThemeMode } from './store/theme-mode';
+import { useUserStore } from './store/user';
+import { initDom } from './utils/positionToCode';
+import './styles/app.css';
 
 dayjs.extend(duration);
 
@@ -46,7 +47,6 @@ export const queryClient = new QueryClient({
 if (typeof window !== 'undefined') {
   const url = new URL(window.location.href);
   const token = url.searchParams.get('token');
-
   if (token) {
     localStorage.setItem('token', token);
     cookie.set('x-token', token);

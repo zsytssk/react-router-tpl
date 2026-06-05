@@ -1,8 +1,10 @@
-import { Navigate, Outlet, useSearchParams } from 'react-router';
-import LoginLayout from './components/LoginLayout';
-import { useUserStore } from '@/store/user';
 import { Spin } from 'antd';
 import { useMemo } from 'react';
+import { Navigate, Outlet, useSearchParams } from 'react-router';
+
+import { useUserStore } from '@/store/user';
+
+import LoginLayout from './components/LoginLayout';
 
 export default function Page() {
   const { token, initLoading } = useUserStore();

@@ -1,0 +1,56 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "AudioWorkletGlobalScope": "readonly",
+    "AudioWorkletProcessor": "readonly",
+    "currentFrame": "readonly",
+    "currentTime": "readonly",
+    "registerProcessor": "readonly",
+    "sampleRate": "readonly",
+    "WorkletGlobalScope": "readonly"
+  },
+  "ignorePatterns": ["node_modules/", "build/"],
+  "plugins": ["typescript", "react"],
+  "rules": {
+    // TypeScript 规则（真正支持的）
+    "ban-ts-comment": "error",
+    "no-duplicate-enum-values": "error",
+    "no-empty-object-type": "error",
+    "no-extra-non-null-assertion": "error",
+    "no-misused-new": "error",
+    "no-namespace": "error",
+    "no-require-imports": "error",
+    "no-this-alias": "error",
+    "no-unnecessary-type-constraint": "error",
+    "no-unsafe-declaration-merging": "error",
+    "no-unsafe-function-type": "error",
+    "no-wrapper-object-types": "error",
+    "prefer-as-const": "error",
+    "prefer-namespace-keyword": "error",
+    "triple-slash-reference": "error",
+
+    // React 规则（真正支持的）
+    "react/display-name": "error",
+    "react/jsx-key": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-target-blank": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-uses-react": "off",      // React 17+ 不再需要
+    "react/jsx-uses-vars": "error",
+    "react/no-children-prop": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-find-dom-node": "error",
+    "react/no-is-mounted": "error",
+    "react/no-render-return-value": "error",
+    "react/no-string-refs": "error",
+    "react/no-unescaped-entities": "error",
+    "react/no-unknown-property": "error",
+    "react/rules-of-hooks": "error",
+    "react/self-close-comp": "warn"     // 推荐添加
+  }
+}

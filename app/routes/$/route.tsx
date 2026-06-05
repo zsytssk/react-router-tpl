@@ -1,9 +1,11 @@
-import { useCallback, useMemo } from 'react';
-import Effect404 from './components/404Effects';
-import { useUserStore } from '@/store/user';
-import { useNavigate } from 'react-router';
-import { motion } from 'motion/react';
 import { Spin } from 'antd';
+import { motion } from 'motion/react';
+import { useCallback, useMemo } from 'react';
+import { useNavigate } from 'react-router';
+
+import { useUserStore } from '@/store/user';
+
+import Effect404 from './components/404Effects';
 
 export default function NotFound() {
   const { initLoading, token } = useUserStore();
