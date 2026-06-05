@@ -13,6 +13,6 @@ export function Footer() {
   const dateStr = `${time.getFullYear()}-${pad(time.getMonth() + 1)}-${pad(time.getDate())}`;
 
   return (
-    <footer className="relative z-10 w-full h-8 px-6 bg-black/60 flex justify-between items-center border-t border-tech-primary/20 backdrop-blur-sm"></footer>
+    <footer className="border-tech-primary/20 relative z-10 flex h-8 w-full items-center justify-between border-t bg-black/60 px-6 backdrop-blur-sm"></footer>
   );
 }

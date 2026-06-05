@@ -5,7 +5,7 @@ import Header from './header';
 
 export default function LoginLayout({ children }: { children?: ReactElement }) {
   return (
-    <div className="h-screen flex flex-col relative">
+    <div className="relative flex h-screen flex-col">
       <Header />
       {children}
       <Footer />

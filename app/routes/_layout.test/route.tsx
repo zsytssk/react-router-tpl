@@ -6,7 +6,7 @@ export default function AlarmPage() {
   return (
     <div
       className={cn(
-        'flex-1 flex p-6 gap-6 overflow-hidden text-slate-200',
+        'flex flex-1 gap-6 overflow-hidden p-6 text-slate-200',
         styles.alarm
       )}
     ></div>

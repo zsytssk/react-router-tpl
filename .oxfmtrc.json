@@ -11,6 +11,9 @@
   "arrowParens": "always",
   "proseWrap": "preserve",
   "sortPackageJson": true,
+  "sortTailwindcss": {
+    "functions": ["cn"]
+  },
   "ignorePatterns": [],
    "sortImports": {
     "ignoreCase": true,               // 忽略大小写

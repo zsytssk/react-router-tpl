@@ -16,7 +16,7 @@ export default function Page() {
 
   if (initLoading) {
     return (
-      <div className="w-screen h-screen flex justify-center items-center">
+      <div className="flex h-screen w-screen items-center justify-center">
         <Spin spinning size="large"></Spin>
       </div>
     );
@@ -28,7 +28,7 @@ export default function Page() {
 
   if (isLite) {
     return (
-      <div className="w-screen h-screen flex flex-col">
+      <div className="flex h-screen w-screen flex-col">
         <Outlet />
       </div>
     );
